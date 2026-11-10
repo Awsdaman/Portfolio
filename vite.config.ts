@@ -20,13 +20,29 @@ const origin = domain ? `https://${domain}` : ''
 // VITE_SITE=games builds the games page alone, served at the site root.
 const gamesOnly = process.env.VITE_SITE === 'games'
 
+// GitHub Pages serves from a sub-path and cannot send headers, so it gets the policy as a meta tag.
+// Given without a leading slash, because Git Bash on Windows rewrites values that start with one.
+const base = process.env.VITE_BASE ? `/${process.env.VITE_BASE}` : '/'
+const cspMeta = process.env.VITE_CSP_META
+  ? headers['Content-Security-Policy'].replace(" frame-ancestors 'none';", '')
+  : ''
+
 export default defineConfig({
+  base,
   build: {
     rollupOptions: { input: gamesOnly ? ['games/index.html'] : ['index.html', 'games/index.html'] },
   },
   plugins: [
     react(),
-    { name: 'site-origin', transformIndexHtml: (html) => html.replaceAll('__SITE_ORIGIN__', origin) },
+    {
+      name: 'site-origin',
+      transformIndexHtml: (html) => {
+        const page = html.replaceAll('__SITE_ORIGIN__/', `${origin}${base}`)
+        if (!cspMeta) return page
+        return page.replace('<head>', `<head>
+    <meta http-equiv="Content-Security-Policy" content="${cspMeta}" />`)
+      },
+    },
     {
       name: 'games-at-root',
       apply: 'build',

@@ -140,7 +140,7 @@ export const projects: Project[] = [
     },
     live: 'https://dub-ashen-ten.vercel.app',
     repo: 'https://github.com/Awsdaman/Dub',
-    image: { src: '/projects/dub.webp', alt: { en: 'The Dub game’s opening studio screen, with a name field and a microphone level meter.', ar: 'شاشة الاستوديو الافتتاحية في لعبة دوبلاج، مع حقل الاسم ومقياس مستوى المايك.' } },
+    image: { src: 'projects/dub.webp', alt: { en: 'The Dub game’s opening studio screen, with a name field and a microphone level meter.', ar: 'شاشة الاستوديو الافتتاحية في لعبة دوبلاج، مع حقل الاسم ومقياس مستوى المايك.' } },
     colors: { bg: '#f2c218', text: '#141310' },
   },
   {
@@ -151,7 +151,7 @@ export const projects: Project[] = [
     },
     live: 'https://saudi96.vercel.app',
     repo: 'https://github.com/Awsdaman/Saudi96',
-    image: { src: '/projects/saudi96.webp', alt: { en: 'The Saudi96 game’s team setup screen.', ar: 'شاشة إعداد الفرق في لعبة هل تعرف السعودية؟' } },
+    image: { src: 'projects/saudi96.webp', alt: { en: 'The Saudi96 game’s team setup screen.', ar: 'شاشة إعداد الفرق في لعبة هل تعرف السعودية؟' } },
     colors: { bg: '#0d3b2d', text: '#f4f7f3' },
   },
   {

@@ -74,8 +74,8 @@ export function GamesPage() {
 
         <section className="s wrap" id="reel">
           <Title text={copy.reelTitle} />
-          <video className="reel" controls playsInline preload="none" poster="/games/poster.webp" aria-label={t(copy.reelLabel)}>
-            <source src="/games/reel.mp4" type="video/mp4" />
+          <video className="reel" controls playsInline preload="none" poster={`${import.meta.env.BASE_URL}games/poster.webp`} aria-label={t(copy.reelLabel)}>
+            <source src={`${import.meta.env.BASE_URL}games/reel.mp4`} type="video/mp4" />
           </video>
           <p className="g-note">{t(copy.reelNote)}</p>
         </section>
@@ -104,7 +104,7 @@ export function GamesPage() {
                     <Ext href={p.repo}>GitHub</Ext>
                   </div>
                 </div>
-                {p.image && <div className="pic"><img src={p.image.src} width={390} height={690} alt={t(p.image.alt)} loading="lazy" decoding="async" /></div>}
+                {p.image && <div className="pic"><img src={`${import.meta.env.BASE_URL}${p.image.src}`} width={390} height={690} alt={t(p.image.alt)} loading="lazy" decoding="async" /></div>}
                 {p.stats && (
                   <div className="score">
                     {p.stats.map((s) => <div key={s.label.en}><b>{s.value}</b><span>{t(s.label)}</span></div>)}
@@ -139,7 +139,7 @@ export function GamesPage() {
         </div>
         <div className="sub">
           <Ext href={links.github}>GitHub</Ext>
-          {!standalone && <a href="/">{t(copy.security)}</a>}
+          {!standalone && <a href={import.meta.env.BASE_URL}>{t(copy.security)}</a>}
         </div>
       </footer>
     </>

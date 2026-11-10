@@ -38,7 +38,7 @@ Add an entry to the `projects` array:
   body: { en: 'One short paragraph.', ar: 'فقرة قصيرة.' },
   repo: 'https://github.com/Awsdaman/name',
   live: 'https://example.vercel.app',                 // optional
-  image: { src: '/projects/name.webp', alt: { en: '…', ar: '…' } }, // optional
+  image: { src: 'projects/name.webp', alt: { en: '…', ar: '…' } }, // optional
   colors: { bg: '#123456', text: '#ffffff' },         // optional, the card's colour
 }
 ```
@@ -73,6 +73,16 @@ Colours, radii and typefaces are tokens in `src/styles/tokens.css`. To change th
 
 To publish it as its own website, create a second Vercel project from this repository and set the environment variable `VITE_SITE` to `games`. The games page then becomes the home page, with no link back to the security portfolio.
 
-## Deploy
+## Publish to GitHub Pages
+
+Builds both websites and publishes them to the `gh-pages` branch. Run it after pushing changes to `main`.
+
+```bash
+bash scripts/deploy-pages.sh
+```
+
+The portfolio is at `https://awsdaman.github.io/Portfolio/` and the games version on its own is at `https://awsdaman.github.io/Portfolio/bootcamp/`. GitHub Pages cannot send custom response headers, so the Content-Security-Policy is delivered through a meta tag there. Vercel sends the full header set.
+
+## Deploy to Vercel
 
 Import the repository into Vercel and deploy from `main`. The framework is detected from `vercel.json`, which also sets the security headers.

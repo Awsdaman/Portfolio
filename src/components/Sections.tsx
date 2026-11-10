@@ -113,7 +113,7 @@ export function Projects() {
               </div>
               {p.image && (
                 <div className="pic">
-                  <img src={p.image.src} width={390} height={690} alt={t(p.image.alt)} loading="lazy" decoding="async" />
+                  <img src={`${import.meta.env.BASE_URL}${p.image.src}`} width={390} height={690} alt={t(p.image.alt)} loading="lazy" decoding="async" />
                 </div>
               )}
               {p.stats && (
@@ -249,8 +249,8 @@ export function Contact() {
       <div className="sub">
         <Ext href={links.linkedin}>LinkedIn</Ext>
         <Ext href={links.github}>GitHub</Ext>
-        <a href="/games/">{lang === 'ar' ? 'ألعابي' : 'My games'}</a>
-        {cvAvailable && <a href="/Aous-Damanhoori-CV.pdf" download>{lang === 'ar' ? 'السيرة الذاتية' : 'Download CV'}</a>}
+        <a href={`${import.meta.env.BASE_URL}games/`}>{lang === 'ar' ? 'ألعابي' : 'My games'}</a>
+        {cvAvailable && <a href={`${import.meta.env.BASE_URL}Aous-Damanhoori-CV.pdf`} download>{lang === 'ar' ? 'السيرة الذاتية' : 'Download CV'}</a>}
         <span>{t({ en: 'Riyadh, Saudi Arabia', ar: 'الرياض، المملكة العربية السعودية' })}</span>
       </div>
     </footer>
