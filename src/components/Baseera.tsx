@@ -29,7 +29,7 @@ const copy = {
   checkHadith: { en: 'Hadith id is in what was retrieved', ar: 'معرّف الحديث ضمن ما جرى استرجاعه' },
   answer: { en: 'Answer', ar: 'الإجابة' },
   exact: { en: 'exact stored text', ar: 'النص المخزَّن بحروفه' },
-  abstains: { en: 'Abstains.', ar: 'يمتنع عن الإجابة.' },
+  abstains: { en: 'Abstains', ar: 'يمتنع عن الإجابة' },
   abstainsWhy: { en: 'Verification failed twice, so nothing is shown.', ar: 'فشل التحقق مرتين، فلا يُعرض شيء.' },
   note: { en: 'An illustration of the pipeline. No real verse is shown here.', ar: 'رسم توضيحي لمسار العمل، ولا يتضمن نصًا حقيقيًا.' },
 }

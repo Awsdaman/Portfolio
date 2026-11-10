@@ -6,12 +6,12 @@ type Phase = 'idle' | 'play' | 'over'
 const copy = {
   label: { en: 'Keep-up mini game. Press Space or tap to hit the ball.', ar: 'لعبة مصغرة. اضغط المسافة أو المس الشاشة لضرب الكرة.' },
   title: { en: 'Keep it up', ar: 'لا تُسقطها' },
-  how: { en: 'Tap or press Space when the ball is low.', ar: 'المس الشاشة أو اضغط المسافة حين تنزل الكرة.' },
+  how: { en: 'Tap or press Space when the ball is low', ar: 'المس الشاشة أو اضغط المسافة حين تنزل الكرة' },
   play: { en: 'Play', ar: 'العب' },
   again: { en: 'Play again', ar: 'العب مرة أخرى' },
   score: { en: 'Score', ar: 'النتيجة' },
   best: { en: 'Best', ar: 'الأفضل' },
-  over: { en: 'Dropped it.', ar: 'سقطت الكرة.' },
+  over: { en: 'Dropped it', ar: 'سقطت الكرة' },
 }
 
 function readBest() {

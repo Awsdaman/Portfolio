@@ -82,7 +82,7 @@ export function Projects() {
 
   return (
     <section className="s wrap" id="built">
-      <Title text={{ en: 'Software I ship.', ar: 'برمجيات أطلقها.' }} mute={{ en: 'On my own time.', ar: 'في وقتي الخاص.' }} />
+      <Title text={{ en: 'Software I ship.', ar: 'برمجيات أطلقها.' }} mute={{ en: 'On my own time', ar: 'في وقتي الخاص' }} />
       <div className="stack">
         {projects.map((p) => {
           const open = hoverable && p.live
@@ -160,7 +160,7 @@ export function Path() {
 
   return (
     <section className="s wrap" id="path">
-      <Title text={{ en: 'Where I have worked and studied.', ar: 'أين عملت ودرست.' }} />
+      <Title text={{ en: 'Where I have worked and studied', ar: 'أين عملت ودرست' }} />
       <div className="tl" ref={list}>
         <span className="rail" aria-hidden="true" />
         <span className="fill" ref={fill} aria-hidden="true" />
@@ -186,7 +186,7 @@ export function Credentials() {
   const { lang, t } = useSite()
   return (
     <section className="s wrap" id="creds">
-      <Title text={{ en: 'Credentials, weighted honestly.', ar: 'شهادات بوزنها الحقيقي.' }} />
+      <Title text={{ en: 'Credentials, weighted honestly', ar: 'شهادات بوزنها الحقيقي' }} />
       <div className="grid hero-grid">
         <div className="card ejpt">
           <h3>{lang === 'ar' ? 'الشهادة' : 'Certification'}</h3>
@@ -238,7 +238,7 @@ export function Contact() {
   }
   return (
     <footer className="wrap end" id="contact">
-      <Title className="t end-t" text={{ en: 'Email me.', ar: 'راسلني.' }} />
+      <Title className="t end-t" text={{ en: 'Email me', ar: 'راسلني' }} />
       <p className="m">{t({ en: 'Or message me on LinkedIn. I am open to opportunities.', ar: 'أو تواصل معي عبر لينكدإن. أنا منفتح على الفرص.' })}</p>
       <div className="cta flat">
         <MailLink className="btn p" showAddress />

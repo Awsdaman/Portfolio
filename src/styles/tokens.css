@@ -2,8 +2,8 @@
 :root {
   --font-en: 'Geist Variable', system-ui, sans-serif;
   --font-ar: 'Readex Pro Variable', Tahoma, sans-serif;
-  --r-l: 28px;
-  --r-m: 18px;
+  --r-l: 20px;
+  --r-m: 12px;
   --ease: cubic-bezier(.16, 1, .3, 1);
   --wrap: 76rem;
   --gut: clamp(1rem, 4vw, 2rem);

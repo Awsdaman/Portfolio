@@ -55,13 +55,13 @@ export function Title({ text, mute, className = 't' }: { text: Bi; mute?: Bi; cl
     const el = ref.current
     if (!el || reduceMotion() || shown.current) return
     const words = [...el.querySelectorAll('.w')]
-    utils.set(words, { opacity: 0, y: '.35em' })
+    utils.set(words, { opacity: 0, y: 8 })
     const io = new IntersectionObserver(
       (entries) => {
         if (!entries[0].isIntersecting) return
         io.disconnect()
         shown.current = true
-        animate(words, { opacity: 1, y: 0, duration: 900, ease: 'out(4)', delay: stagger(38) })
+        animate(words, { opacity: 1, y: 0, duration: 400, ease: 'out(4)', delay: stagger(40) })
       },
       { rootMargin: '0px 0px -8% 0px' },
     )

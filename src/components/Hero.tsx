@@ -95,8 +95,8 @@ function useScanField(canvasRef: React.RefObject<HTMLCanvasElement | null>, lang
       const state = { p: 0 }
       sweep = animate(state, { p: 1, duration: 2100, ease: 'inOut(2)', onUpdate: () => { progress = state.p; draw() } })
       const rises = [...document.querySelectorAll('.rise')]
-      utils.set(rises, { opacity: 0, y: 18 })
-      animate(rises, { opacity: 1, y: 0, duration: 1000, ease: 'out(4)', delay: stagger(90, { start: 80 }) })
+      utils.set(rises, { opacity: 0, y: 12 })
+      animate(rises, { opacity: 1, y: 0, duration: 500, ease: 'out(4)', delay: stagger(50, { start: 80 }) })
     }
     Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 450))]).then(start)
 
@@ -122,10 +122,7 @@ export function Hero() {
     <section className="hero" id="top">
       <canvas ref={canvas} id="field" aria-hidden="true" />
       <div className="hero-in">
-        <p className="pill rise">
-          <i aria-hidden="true" />
-          {t(hero.role)}
-        </p>
+        <p className="role rise">{t(hero.role)}</p>
         <h1 className="rise">{t(hero.name)}</h1>
         <p className="lede rise">{t(hero.lede)}</p>
         <div className="cta rise">

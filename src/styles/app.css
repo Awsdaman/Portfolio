@@ -1,58 +1,58 @@
 *, *::before, *::after { box-sizing: border-box }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 6rem }
-body { margin: 0; background: var(--bg); color: var(--tx); font: 400 1.0625rem/1.6 var(--font-en); -webkit-font-smoothing: antialiased; overflow-x: clip }
-html[data-lang='ar'] body { font-family: var(--font-ar); font-weight: 300; line-height: 1.85 }
+body { margin: 0; background: var(--bg); color: var(--tx); font: 400 1.0625rem/1.6 var(--font-en); font-variant-numeric: tabular-nums; -webkit-font-smoothing: antialiased; overflow-x: clip }
+html[data-lang='ar'] body { font-family: var(--font-ar); font-weight: 400; line-height: 1.85 }
 ::selection { background: var(--ac); color: var(--acink) }
 a { color: inherit; text-decoration: none }
 :focus-visible { outline: 2px solid var(--ac); outline-offset: 3px; border-radius: 6px }
 h1, h2, h3, p, ul, ol, dl, dd, figure { margin: 0; padding: 0 }
 ul, ol { list-style: none }
 .wrap { max-width: var(--wrap); margin-inline: auto; padding-inline: var(--gut) }
-.skip { position: fixed; z-index: 30; inset-block-start: .75rem; inset-inline-start: .75rem; background: var(--inv); color: var(--invtx); padding: .6rem 1rem; border-radius: 999px; transform: translateY(-200%) }
+.skip { position: fixed; z-index: 30; inset-block-start: 0.75rem; inset-inline-start: 0.75rem; background: var(--inv); color: var(--invtx); padding: 0.5rem 1rem; border-radius: 999px; transform: translateY(-200%) }
 .skip:focus { transform: none }
 .todo { display: inline-block; border: 1px dashed var(--ac); color: var(--ac); border-radius: 999px; padding: .05em .7em; font-size: .875em; font-weight: 500 }
 
 /* nav */
-.nav { position: fixed; z-index: 20; inset-block-start: .75rem; inset-inline: 0; display: flex; justify-content: center; padding-inline: var(--gut); pointer-events: none }
-.bar { pointer-events: auto; display: flex; align-items: center; justify-content: space-between; gap: .5rem; width: min(100%, 56rem); padding: .3rem; border: 1px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--s1) 78%, transparent); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4) }
-.who { font-weight: 600; padding-inline: .9rem; white-space: nowrap; min-height: var(--tap); display: inline-flex; align-items: center; border-radius: 999px }
-.links { display: none; gap: .1rem }
-.links a { font-size: .9375rem; color: var(--mu); padding: .4rem .8rem; border-radius: 999px; transition: color .2s, background .2s }
+.nav { position: fixed; z-index: 20; inset-block-start: 0.75rem; inset-inline: 0; display: flex; justify-content: center; padding-inline: var(--gut); pointer-events: none }
+.bar { pointer-events: auto; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; width: min(100%, 56rem); padding: 0.25rem; border: 1px solid var(--line); border-radius: 16px; background: color-mix(in srgb, var(--s1) 78%, transparent); backdrop-filter: blur(16px) saturate(1.4); -webkit-backdrop-filter: blur(16px) saturate(1.4) }
+.who { font-weight: 600; padding-inline: 1rem; white-space: nowrap; min-height: var(--tap); display: inline-flex; align-items: center; border-radius: 12px }
+.links { display: none; gap: 0.25rem }
+.links a { font-size: .9375rem; color: var(--mu); padding: 0.5rem 0.75rem; border-radius: 8px; transition: color .15s, background .15s }
 .links a:hover { color: var(--tx); background: var(--s2) }
-.ctrl { display: flex; gap: .3rem }
-.ib { min-width: var(--tap); height: var(--tap); border-radius: 999px; border: 1px solid var(--line); background: transparent; color: var(--tx); font: inherit; font-size: .9375rem; font-weight: 500; padding-inline: .85rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background .2s }
+.ctrl { display: flex; gap: 0.25rem }
+.ib { min-width: var(--tap); height: var(--tap); border-radius: 12px; border: 1px solid var(--line); background: transparent; color: var(--tx); font: inherit; font-size: .9375rem; font-weight: 500; padding-inline: 0.75rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: background .15s }
 .ib:hover { background: var(--s2) }
 .ib.ic { padding: 0 }
-.ib svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round }
+.ib svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round }
 
 /* hero */
 .hero { position: relative; min-height: 100svh; display: flex; flex-direction: column; overflow: clip }
 #field { position: absolute; inset: 0; width: 100%; height: 100% }
 .hero-in { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6.5rem var(--gut) 2rem }
-.pill { display: inline-flex; align-items: center; gap: .55rem; border: 1px solid var(--line); border-radius: 999px; padding: .32rem .95rem; font-size: .9375rem; background: var(--s1) }
-.pill i { width: 7px; height: 7px; border-radius: 50%; background: var(--tx) }
-h1 { font-weight: 700; letter-spacing: -.035em; line-height: 1; margin-block: 1.4rem 1.3rem; font-size: clamp(3.7rem, 15.5vw, 6rem) }
+.role { font-size: 1rem; color: var(--mu) }
+h1 { font-weight: 600; letter-spacing: -.03em; line-height: 1; margin-block: 1.5rem 1.25rem; font-size: clamp(3.7rem, 15.5vw, 6rem) }
 html[data-lang='ar'] h1 { letter-spacing: 0; line-height: 1.25; font-size: clamp(4rem, 17vw, 6.5rem) }
 .lede { max-width: 35rem; color: var(--mu); font-size: clamp(1.0625rem, 2.2vw, 1.25rem); line-height: 1.55 }
 html[data-lang='ar'] .lede { line-height: 1.9 }
-.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-block-start: 2rem }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-block-start: 2rem }
 .cta.flat { margin: 0 }
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 50px; padding: .6rem 1.5rem; border-radius: 999px; font: inherit; font-size: 1rem; font-weight: 500; border: 1px solid var(--line); background: var(--s1); color: var(--tx); cursor: pointer; transition: transform .35s var(--ease), background .2s, color .2s }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; min-height: 50px; padding: 0.5rem 1.5rem; border-radius: 12px; font: inherit; font-size: 1rem; font-weight: 500; border: 1px solid var(--line); background: var(--s1); color: var(--tx); cursor: pointer; transition: transform .15s var(--ease), background .15s, color .15s }
 .btn.p { background: var(--inv); color: var(--invtx); border-color: transparent }
-.btn:hover { transform: translateY(-2px) }
-.btn:active { transform: translateY(0) scale(.98) }
+.btn:hover { background: var(--s2) }
+.btn.p:hover { background: color-mix(in srgb, var(--inv) 88%, var(--bg)) }
+.btn:active { transform: scale(.98) }
 .facts { position: relative; display: grid; grid-template-columns: 1fr 1fr; border-block-start: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 70%, transparent) }
-.facts li { padding: .9rem var(--gut); font-size: .9375rem; color: var(--mu); border-inline-end: 1px solid var(--line) }
+.facts li { padding: 1rem var(--gut); font-size: .9375rem; color: var(--mu); border-inline-end: 1px solid var(--line) }
 .facts b { display: block; color: var(--tx); font-weight: 500 }
 .js:not(.ready) .rise { opacity: 0 }
 
 /* statement */
 .state { padding-block: clamp(6rem, 16vw, 11rem) }
-.state p { font-size: clamp(1.75rem, 4.6vw, 3.25rem); line-height: 1.2; letter-spacing: -.02em; font-weight: 500; max-width: 22em }
+.state p { font-size: clamp(1.75rem, 4.6vw, 3.25rem); line-height: 1.2; letter-spacing: -.01em; font-weight: 500; max-width: 22em }
 html[data-lang='ar'] .state p { letter-spacing: 0; line-height: 1.6; font-weight: 400 }
 
 /* titles */
-.t { font-size: clamp(2.1rem, 5.4vw, 3.75rem); line-height: 1.06; letter-spacing: -.028em; font-weight: 600; max-width: 17em; text-wrap: balance }
+.t { font-size: clamp(2.1rem, 5.4vw, 3.75rem); line-height: 1.08; letter-spacing: -.02em; font-weight: 500; max-width: 17em; text-wrap: balance }
 html[data-lang='ar'] .t { letter-spacing: 0; line-height: 1.45 }
 .t em { font-style: normal; color: var(--mu) }
 .w { display: inline-block; white-space: pre }
@@ -65,32 +65,32 @@ section.s { padding-block: clamp(3rem, 8vw, 6rem) }
 .copy p:empty { display: none }
 .copy strong { color: var(--tx); font-weight: 500 }
 .spec { margin-block-start: 1.5rem; border-block-start: 1px solid var(--line) }
-.spec div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: .75rem; padding-block: .7rem; border-block-end: 1px solid var(--line); font-size: .9375rem }
+.spec div { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 0.75rem; padding-block: 0.75rem; border-block-end: 1px solid var(--line); font-size: .9375rem }
 .spec dt { color: var(--tx); font-weight: 500 }
 .lnk { display: inline-flex; align-items: center; min-height: var(--tap); color: var(--tx); font-weight: 500 }
 .lnk span { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: .3em; transition: text-decoration-color .2s }
 .lnk:hover span { text-decoration-color: currentColor }
-.demo { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(.75rem, 2vw, 1.15rem) }
-.seg { position: relative; display: grid; grid-template-columns: 1fr 1fr; background: var(--s2); border-radius: 999px; padding: 4px }
-.seg button { position: relative; z-index: 1; border: 0; background: none; color: var(--mu); font: inherit; font-weight: 500; font-size: .9375rem; min-height: var(--tap); border-radius: 999px; cursor: pointer; transition: color .25s }
+.demo { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(0.75rem, 2vw, 1.25rem) }
+.seg { position: relative; display: grid; grid-template-columns: 1fr 1fr; background: var(--s2); border-radius: 12px; padding: 4px }
+.seg button { position: relative; z-index: 1; border: 0; background: none; color: var(--mu); font: inherit; font-weight: 500; font-size: .9375rem; min-height: var(--tap); border-radius: 8px; cursor: pointer; transition: color .15s }
 .seg button[aria-pressed='true'] { color: var(--invtx) }
-.thumb { position: absolute; inset-block: 4px; inset-inline-start: 4px; width: calc(50% - 4px); border-radius: 999px; background: var(--inv); transition: transform .5s var(--ease) }
+.thumb { position: absolute; inset-block: 4px; inset-inline-start: 4px; width: calc(50% - 4px); border-radius: 8px; background: var(--inv); transition: transform .5s var(--ease) }
 html[dir='ltr'] [data-mode='fail'] .thumb { transform: translateX(100%) }
 html[dir='rtl'] [data-mode='fail'] .thumb { transform: translateX(-100%) }
-.stage { margin-block-start: .75rem; display: grid }
-.panel { background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-m); padding: .9rem 1rem }
-.panel h3 { display: flex; justify-content: space-between; align-items: center; gap: .75rem; font-size: .9375rem; font-weight: 500; margin-block-end: .7rem }
+.stage { margin-block-start: 0.75rem; display: grid }
+.panel { background: var(--bg); border: 1px solid var(--line); border-radius: var(--r-m); padding: 1rem 1rem }
+.panel h3 { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; font-size: .9375rem; font-weight: 500; margin-block-end: 0.75rem }
 .panel h3 small { font-size: .8125rem; font-weight: 400; color: var(--mu) }
 .model h3 small { color: var(--ac) }
-.bars { display: flex; flex-wrap: wrap; gap: .5rem .4rem; align-items: center }
+.bars { display: flex; flex-wrap: wrap; gap: 0.5rem 0.5rem; align-items: center }
 .b { height: 9px; border-radius: 9px; background: var(--s2); transform-origin: left center }
 html[dir='rtl'] .b { transform-origin: right center }
 .w12 { width: 12% } .w22 { width: 22% } .w30 { width: 30% } .w58 { width: 58% } .w64 { width: 64% } .w70 { width: 70% } .w92 { width: 92% }
-.chip { display: inline-flex; align-items: center; height: 26px; padding-inline: .6rem; border-radius: 8px; border: 1px dashed var(--ac); color: var(--ac); font-size: .8125rem; white-space: nowrap }
+.chip { display: inline-flex; align-items: center; height: 26px; padding-inline: 0.5rem; border-radius: 8px; border: 1px dashed var(--ac); color: var(--ac); font-size: .8125rem; white-space: nowrap }
 .link { display: flex; justify-content: center; height: 26px }
 .link svg { width: 2px; height: 26px; overflow: visible }
 .link path { fill: none; stroke: var(--mu); stroke-width: 1.5 }
-.rows li { display: flex; align-items: center; justify-content: space-between; gap: .75rem; padding-block: .3rem; font-size: .9375rem; color: var(--mu) }
+.rows li { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; padding-block: 0.25rem; font-size: .9375rem; color: var(--mu) }
 .mk { flex: none; width: 22px; height: 22px; fill: none; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round }
 .mk .ok { stroke: var(--tx) }
 .mk .no { stroke: var(--ac) }
@@ -102,44 +102,44 @@ html[dir='rtl'] .b { transform-origin: right center }
 .res.good .b { background: color-mix(in srgb, var(--invtx) 28%, transparent) }
 .res.bad { background: var(--ac); color: var(--acink); border-color: transparent }
 .res.bad p { font-size: 1.5rem; font-weight: 600; line-height: 1.25 }
-.res.bad span { display: block; font-size: .9375rem; font-weight: 400; margin-block-start: .2rem }
-.say { min-height: 3.2em; margin-block-start: .75rem; padding-inline: .25rem; font-size: .9375rem; font-weight: 500 }
-.note { font-size: .8125rem; color: var(--mu); padding-inline: .25rem }
+.res.bad span { display: block; font-size: .9375rem; font-weight: 400; margin-block-start: 0.25rem }
+.say { min-height: 3.2em; margin-block-start: 0.75rem; padding-inline: 0.25rem; font-size: .9375rem; font-weight: 500 }
+.note { font-size: .8125rem; color: var(--mu); padding-inline: 0.25rem }
 
 /* case studies */
 .study { margin-block-start: 1.5rem; border-block: 1px solid var(--line) }
 .study summary, .more summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 56px; font-size: 1.125rem; font-weight: 500 }
 .study summary::-webkit-details-marker, .more summary::-webkit-details-marker { display: none }
-.study summary::after, .more summary::after { content: ''; flex: none; width: 11px; height: 11px; margin-inline-end: .4rem; border-inline-end: 2px solid currentColor; border-block-end: 2px solid currentColor; transform: rotate(45deg) translate(-3px, -3px); transition: transform .35s var(--ease) }
+.study summary::after, .more summary::after { content: ''; flex: none; width: 11px; height: 11px; margin-inline-end: 0.5rem; border-inline-end: 2px solid currentColor; border-block-end: 2px solid currentColor; transform: rotate(45deg) translate(-3px, -3px); transition: transform .35s var(--ease) }
 details[open] > summary::after { transform: rotate(225deg) }
-.study-body { padding-block: .75rem 2rem }
+.study-body { padding-block: 0.75rem 2rem }
 .grid4 { display: grid; gap: 1.5rem 3rem }
-.grid4 h3, .proof-h { font-size: 1rem; font-weight: 500; margin-block-end: .35rem }
+.grid4 h3, .proof-h { font-size: 1rem; font-weight: 500; margin-block-end: 0.25rem }
 .grid4 p { color: var(--mu); max-width: 38em }
 .proof-h { margin-block-start: 2rem }
-.arch ol { display: grid; gap: .5rem }
-.arch li { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-m); padding: .85rem 1rem; display: flex; flex-direction: column; justify-content: center }
+.arch ol { display: grid; gap: 0.5rem }
+.arch li { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-m); padding: 0.75rem 1rem; display: flex; flex-direction: column; justify-content: center }
 .arch li b { font-weight: 500 }
 .arch li span { color: var(--mu); font-size: .9375rem }
 .arch .risk { border: 1px dashed var(--ac) }
-.arch .fork { padding: 0; background: none; border: 0; display: grid; gap: .5rem }
-.arch .fork b { background: var(--inv); color: var(--invtx); border-radius: var(--r-m); padding: .85rem 1rem }
+.arch .fork { padding: 0; background: none; border: 0; display: grid; gap: 0.5rem }
+.arch .fork b { background: var(--inv); color: var(--invtx); border-radius: var(--r-m); padding: 0.75rem 1rem }
 .arch .fork b.stop { background: var(--ac); color: var(--acink) }
-.arch figcaption { color: var(--mu); font-size: .875rem; margin-block-start: .6rem }
+.arch figcaption { color: var(--mu); font-size: .875rem; margin-block-start: 0.5rem }
 .rules { display: grid; gap: 1rem 2rem; margin-block-start: 1.5rem }
 .rules li { color: var(--mu); font-size: .9375rem }
 .rules b { display: block; color: var(--tx); font-weight: 500; font-size: 1.0625rem }
 
 /* threat */
 .threat { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(1.25rem, 4vw, 3rem); display: grid; gap: 1.5rem clamp(2rem, 6vw, 5rem) }
-.big { font-size: clamp(6rem, 17vw, 11rem); font-weight: 600; line-height: .9; letter-spacing: -.05em }
-.big + p { color: var(--mu); margin-block-start: .75rem; max-width: 18em }
-.threat h2 { font-size: clamp(1.6rem, 3.4vw, 2.25rem); font-weight: 600; letter-spacing: -.02em; line-height: 1.2; margin-block-end: 1rem }
+.big { font-size: clamp(6rem, 17vw, 11rem); font-weight: 500; line-height: .9; letter-spacing: -.03em }
+.big + p { color: var(--mu); margin-block-start: 0.75rem; max-width: 18em }
+.threat h2 { font-size: clamp(1.6rem, 3.4vw, 2.25rem); font-weight: 500; letter-spacing: 0; line-height: 1.2; margin-block-end: 1rem }
 html[data-lang='ar'] .threat h2 { letter-spacing: 0; line-height: 1.6 }
 .threat .d { color: var(--mu) }
-.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: 1.25rem .75rem }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-block: 1.25rem 0.75rem }
 html[dir='rtl'] .tags { justify-content: flex-end }
-.tags li { border: 1px solid var(--line); border-radius: 999px; padding: .15rem .75rem; font-size: .875rem; color: var(--tx) }
+.tags li { border: 1px solid var(--line); border-radius: 6px; padding: 0.25rem 0.75rem; font-size: .875rem; color: var(--tx) }
 .threat .study { margin: 0; border-block-end: 0 }
 
 /* projects */
@@ -148,52 +148,52 @@ html[dir='rtl'] .tags { justify-content: flex-end }
 .pc.plain { --c-bg: var(--s1); --c-tx: var(--tx); border: 1px solid var(--line) }
 .pc.opens { cursor: pointer }
 .pc .tx { padding: clamp(1.25rem, 4vw, 3rem); display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem }
-.pc h3 { font-size: clamp(2.75rem, 7vw, 5rem); font-weight: 700; letter-spacing: -.03em; line-height: 1.05 }
+.pc h3 { font-size: clamp(2.75rem, 7vw, 5rem); font-weight: 600; letter-spacing: -.03em; line-height: 1.05 }
 html[data-lang='ar'] .pc h3 { letter-spacing: 0; line-height: 1.35 }
-.pc p { max-width: 32em; margin-block-start: .75rem }
-.acts { display: flex; flex-wrap: wrap; gap: .25rem 1.25rem }
+.pc p { max-width: 32em; margin-block-start: 0.75rem }
+.acts { display: flex; flex-wrap: wrap; gap: 0.25rem 1.25rem }
 .acts a { display: inline-flex; align-items: center; min-height: var(--tap); font-weight: 500; text-decoration: underline; text-underline-offset: .3em; text-decoration-thickness: 1px }
-.pic { align-self: end; justify-self: center; width: min(74%, 19rem); margin-block-start: .5rem; border-radius: 26px 26px 0 0; overflow: hidden; box-shadow: 0 18px 50px var(--shadow) }
+.pic { align-self: end; justify-self: center; width: min(74%, 19rem); margin-block-start: 0.5rem; border-radius: 16px 16px 0 0; overflow: hidden; box-shadow: 0 18px 50px var(--shadow) }
 .pic img { display: block; width: 100%; height: auto }
 .score { align-self: center; justify-self: center; display: flex; gap: clamp(1.5rem, 5vw, 3rem); padding: 1rem clamp(1.25rem, 4vw, 3rem) 2.5rem; text-align: center }
-.score b { display: block; font-size: clamp(5rem, 12vw, 8.5rem); line-height: 1; font-weight: 600; letter-spacing: -.04em }
+.score b { display: block; font-size: clamp(5rem, 12vw, 8.5rem); line-height: 1; font-weight: 500; letter-spacing: -.03em }
 .score span { color: var(--mu); font-size: .9375rem }
-.badge { position: fixed; top: 0; left: 0; z-index: 25; pointer-events: none; background: var(--inv); color: var(--invtx); font-size: .9375rem; font-weight: 500; padding: .5rem 1rem; border-radius: 999px; opacity: 0; transition: opacity .2s; white-space: nowrap }
+.badge { position: fixed; top: 0; left: 0; z-index: 25; pointer-events: none; background: var(--inv); color: var(--invtx); font-size: .9375rem; font-weight: 500; padding: 0.5rem 1rem; border-radius: 8px; opacity: 0; transition: opacity .15s; white-space: nowrap }
 
 /* timeline */
 .tl { position: relative; margin-block-start: clamp(2rem, 5vw, 3.5rem); padding-inline-start: 1.75rem }
-.rail, .fill { position: absolute; inset-block: .6rem 0; inset-inline-start: 5px; width: 1px; background: var(--line) }
+.rail, .fill { position: absolute; inset-block: 0.5rem 0; inset-inline-start: 5px; width: 1px; background: var(--line) }
 .fill { background: var(--tx); transform-origin: top; width: 2px; inset-inline-start: 4.5px }
 .tl li { position: relative; padding-block-end: clamp(2rem, 5vw, 3rem) }
 .tl li:last-child { padding-block-end: 0 }
-.tl li::before { content: ''; position: absolute; inset-inline-start: calc(-1.75rem + 1px); inset-block-start: .5rem; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--tx) }
+.tl li::before { content: ''; position: absolute; inset-inline-start: calc(-1.75rem + 1px); inset-block-start: 0.5rem; width: 9px; height: 9px; border-radius: 50%; background: var(--bg); border: 2px solid var(--tx) }
 .when { color: var(--mu); font-size: .9375rem }
-.tl h3 { font-size: clamp(1.3rem, 2.6vw, 1.75rem); font-weight: 600; letter-spacing: -.015em; line-height: 1.3 }
+.tl h3 { font-size: clamp(1.3rem, 2.6vw, 1.75rem); font-weight: 500; letter-spacing: 0; line-height: 1.3 }
 html[data-lang='ar'] .tl h3 { letter-spacing: 0; line-height: 1.7 }
-.tl li p:last-child { color: var(--mu); max-width: 44em; margin-block-start: .25rem }
+.tl li p:last-child { color: var(--mu); max-width: 44em; margin-block-start: 0.25rem }
 
 /* credentials */
 .grid { display: grid; gap: 1rem; margin-block-start: clamp(2rem, 5vw, 3.5rem) }
 .grid.two { margin-block-start: 1rem }
 .card { background: var(--s1); border: 1px solid var(--line); border-radius: var(--r-l); padding: clamp(1.25rem, 3vw, 2rem) }
-.card > h3 { font-size: 1.125rem; font-weight: 500; margin-block-end: .5rem }
-.ejpt b { display: block; font-size: clamp(4.5rem, 11vw, 7.5rem); font-weight: 600; line-height: 1; letter-spacing: -.04em; margin-block: .25rem .75rem; text-align: start }
+.card > h3 { font-size: 1.125rem; font-weight: 500; margin-block-end: 0.5rem }
+.ejpt b { display: block; font-size: clamp(4.5rem, 11vw, 7.5rem); font-weight: 500; line-height: 1; letter-spacing: -.03em; margin-block: 0.25rem 0.75rem; text-align: start }
 html[dir='rtl'] .ejpt b { text-align: end }
 .ejpt p { color: var(--mu) }
-.ln li { padding-block: .55rem; border-block-end: 1px solid var(--line) }
+.ln li { padding-block: 0.5rem; border-block-end: 1px solid var(--line) }
 .ln li:last-child { border: 0; padding-block-end: 0 }
 .ln small { display: block; color: var(--mu); font-size: .9375rem }
 .more summary { min-height: var(--tap) }
-.fine { margin-block-start: .75rem; display: grid; gap: .6rem 2.5rem; color: var(--mu); font-size: .9375rem }
+.fine { margin-block-start: 0.75rem; display: grid; gap: 0.5rem 2.5rem; color: var(--mu); font-size: .9375rem }
 .tools { display: grid; gap: 1.25rem 3rem; margin-block-start: clamp(2rem, 5vw, 3.5rem) }
-.tools div { border-block-start: 1px solid var(--line); padding-block-start: .7rem }
-.tools h3 { font-size: 1rem; font-weight: 500; margin-block-end: .15rem }
+.tools div { border-block-start: 1px solid var(--line); padding-block-start: 0.75rem }
+.tools h3 { font-size: 1rem; font-weight: 500; margin-block-end: 0.25rem }
 .tools p { color: var(--mu) }
 html[dir='rtl'] .tools p { text-align: end }
 
 /* contact */
 .end { padding-block: clamp(5rem, 14vw, 10rem) 2rem; text-align: center }
-.end-t { font-size: clamp(3.5rem, 13vw, 9rem); font-weight: 700; letter-spacing: -.04em; line-height: 1; max-width: none }
+.end-t { font-size: clamp(3.5rem, 13vw, 9rem); font-weight: 600; letter-spacing: -.03em; line-height: 1; max-width: none }
 html[data-lang='ar'] .end-t { letter-spacing: 0; line-height: 1.3 }
 .end .m { color: var(--mu); margin-block: 1.25rem 2rem; font-size: 1.125rem }
 .sub { display: flex; flex-wrap: wrap; justify-content: center; gap: 0 1.5rem; margin-block-start: 1.5rem; color: var(--mu) }
@@ -228,5 +228,5 @@ html[data-lang='ar'] .end-t { letter-spacing: 0; line-height: 1.3 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto }
   .btn, .thumb, .links a, .ib, .seg button, .lnk span, .study summary::after, .more summary::after { transition: none }
-  .btn:hover, .btn:active { transform: none }
+  .btn:active { transform: none }
 }

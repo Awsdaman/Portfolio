@@ -18,29 +18,29 @@ typography:
   display:
     fontFamily: "Geist Variable, system-ui, sans-serif"
     fontSize: "clamp(5rem, 8.8vw, 8.75rem)"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: 1
-    letterSpacing: "-.035em"
+    letterSpacing: "-.03em"
   display-arabic:
     fontFamily: "Readex Pro Variable, Tahoma, sans-serif"
     fontSize: "clamp(6rem, 11vw, 11rem)"
-    fontWeight: 700
+    fontWeight: 600
     lineHeight: 1.25
   title:
     fontFamily: "Geist Variable, system-ui, sans-serif"
     fontSize: "clamp(2.1rem, 5.4vw, 3.75rem)"
-    fontWeight: 600
-    lineHeight: 1.06
-    letterSpacing: "-.028em"
+    fontWeight: 500
+    lineHeight: 1.08
+    letterSpacing: "-.02em"
   body:
     fontFamily: "Geist Variable, system-ui, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
     lineHeight: 1.6
 rounded:
-  panel: "18px"
-  card: "28px"
-  pill: "999px"
+  control: "12px"
+  panel: "12px"
+  card: "20px"
 spacing:
   gutter: "clamp(1rem, 4vw, 2rem)"
   tap: "44px"
@@ -48,12 +48,12 @@ components:
   button-primary:
     backgroundColor: "{colors.text-dark}"
     textColor: "{colors.ink-dark}"
-    rounded: "{rounded.pill}"
+    rounded: "{rounded.control}"
     height: "50px"
   button-ghost:
     backgroundColor: "{colors.surface-dark}"
     textColor: "{colors.text-dark}"
-    rounded: "{rounded.pill}"
+    rounded: "{rounded.control}"
     height: "50px"
   card:
     backgroundColor: "{colors.surface-dark}"
@@ -72,7 +72,7 @@ The page behaves the way its author works. It is calm, neutral and product-grade
 English and Arabic are equal. Arabic has its own typeface scale and line heights, and all layout uses logical properties so the page truly reads right to left.
 
 **Key Characteristics:**
-- One name at maximum scale, centred, with a pill above it that says cybersecurity.
+- One name at maximum scale, centred, with a quiet line above it that says cybersecurity.
 - Neutral surfaces in dark and light, with ember reserved for refusal.
 - Real product screens in each product's own colour field.
 - Motion that shows a check happening.
@@ -117,12 +117,12 @@ Flat by default, with separation from hairlines and tonal surfaces. The only sha
 
 ## Shapes
 
-Soft and consistent: pills for controls, 28px for cards, 18px for panels nested inside them.
+Radius follows size: 12px for controls and nested panels, 8px inside segmented controls, 20px for cards.
 
 ## Components
 
 ### Buttons
-Pills at 50px tall, with a primary inverted fill and a surface ghost. Hover lifts 2px.
+50px tall with a 12px radius, a primary inverted fill and a surface ghost. Hover is a surface step, and press is a slight scale down.
 
 ### Baseera demo
 The signature component: untrusted output, plain code, then either exact stored text or Abstains. The failure path shows two attempts before refusing.
@@ -139,6 +139,8 @@ Native disclosure elements with four parts: problem, the hard part, what we did,
 - **Do** keep every animated text state at AA contrast.
 - **Do** split animated Arabic by word only, so letters stay joined.
 - **Do** keep every interactive target at 44px or more.
+- **Do** keep padding, margins and gaps on the 4px grid.
+- **Do** end headlines and short labels without a period.
 - **Do** self-host fonts and scripts, because the Content-Security-Policy allows nothing else.
 
 ### Don't:

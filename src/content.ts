@@ -50,7 +50,7 @@ export const statement: Bi = {
 
 export const baseera = {
   title: { en: 'The model never types a verse.', ar: 'النموذج لا يكتب آية أبدًا.' },
-  titleMute: { en: 'Code checks, then places the exact text.', ar: 'الكود يتحقق، ثم يضع النص بحروفه.' },
+  titleMute: { en: 'Code checks, then places the exact text', ar: 'الكود يتحقق، ثم يضع النص بحروفه' },
   intro: {
     en: 'An Arabic-first Islamic Q&A and verification assistant, built by my team for the AI Challenge Serving Islamic Content. We did not qualify, and I am proud of what we built.',
     ar: 'مساعد عربي أولًا للأسئلة الإسلامية والتحقق، بنيته مع فريقي لتحدي الذكاء الاصطناعي لخدمة المحتوى الإسلامي. لم نتأهل، وأنا فخور بما بنيناه.',
