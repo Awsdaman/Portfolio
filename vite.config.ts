@@ -1,4 +1,4 @@
-import { readFileSync } from 'node:fs'
+import { copyFileSync, readFileSync } from 'node:fs'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -17,10 +17,23 @@ const headers = Object.fromEntries(
 const domain = process.env.SITE_DOMAIN ?? process.env.VERCEL_PROJECT_PRODUCTION_URL
 const origin = domain ? `https://${domain}` : ''
 
+// VITE_SITE=games builds the games page alone, served at the site root.
+const gamesOnly = process.env.VITE_SITE === 'games'
+
 export default defineConfig({
+  build: {
+    rollupOptions: { input: gamesOnly ? ['games/index.html'] : ['index.html', 'games/index.html'] },
+  },
   plugins: [
     react(),
     { name: 'site-origin', transformIndexHtml: (html) => html.replaceAll('__SITE_ORIGIN__', origin) },
+    {
+      name: 'games-at-root',
+      apply: 'build',
+      closeBundle() {
+        if (gamesOnly) copyFileSync('dist/games/index.html', 'dist/index.html')
+      },
+    },
   ],
   preview: { port: 4174, headers },
 })

@@ -249,6 +249,7 @@ export function Contact() {
       <div className="sub">
         <Ext href={links.linkedin}>LinkedIn</Ext>
         <Ext href={links.github}>GitHub</Ext>
+        <a href="/games/">{lang === 'ar' ? 'ألعابي' : 'My games'}</a>
         {cvAvailable && <a href="/Aous-Damanhoori-CV.pdf" download>{lang === 'ar' ? 'السيرة الذاتية' : 'Download CV'}</a>}
         <span>{t({ en: 'Riyadh, Saudi Arabia', ar: 'الرياض، المملكة العربية السعودية' })}</span>
       </div>

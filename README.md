@@ -67,6 +67,12 @@ Put the file at `public/Aous-Damanhoori-CV.pdf`, then set `cvAvailable` to `true
 
 Colours, radii and typefaces are tokens in `src/styles/tokens.css`. To change the Arabic typeface, edit `--font-ar` and load the font in `src/main.tsx`. The site has a strict Content-Security-Policy, so fonts must be self-hosted.
 
+## The games version
+
+`/games/` is a page aimed at game programmes. It reuses the projects from `src/content.ts`, and its own copy lives in `src/games/GamesPage.tsx`. The reel is `public/games/reel.mp4`.
+
+To publish it as its own website, create a second Vercel project from this repository and set the environment variable `VITE_SITE` to `games`. The games page then becomes the home page, with no link back to the security portfolio.
+
 ## Deploy
 
 Import the repository into Vercel and deploy from `main`. The framework is detected from `vercel.json`, which also sets the security headers.

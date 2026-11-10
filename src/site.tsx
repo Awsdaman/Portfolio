@@ -22,12 +22,12 @@ function save(key: string, value: string) {
   }
 }
 
-const titles: Record<Lang, string> = {
+const defaultTitles: Record<Lang, string> = {
   en: 'Aous Damanhoori, Cybersecurity Analyst',
   ar: 'أوس دمنهوري، محلل أمن سيبراني',
 }
 
-export function SiteProvider({ children }: { children: ReactNode }) {
+export function SiteProvider({ children, titles = defaultTitles }: { children: ReactNode; titles?: Record<Lang, string> }) {
   const root = document.documentElement
   const [lang, setLang] = useState<Lang>(root.dataset.lang === 'ar' ? 'ar' : 'en')
   const [theme, setTheme] = useState<Theme>(root.dataset.theme === 'light' ? 'light' : 'dark')
@@ -37,7 +37,7 @@ export function SiteProvider({ children }: { children: ReactNode }) {
     root.lang = lang === 'ar' ? 'ar-SA' : 'en'
     root.dir = lang === 'ar' ? 'rtl' : 'ltr'
     document.title = titles[lang]
-  }, [lang, root])
+  }, [lang, root, titles])
 
   useEffect(() => {
     root.dataset.theme = theme

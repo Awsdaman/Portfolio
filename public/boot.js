@@ -5,7 +5,7 @@
     try { return localStorage.getItem(key) } catch (e) { return null }
   }
   var query = new URLSearchParams(location.search)
-  var lang = query.get('lang') === 'ar' || query.get('lang') === 'en' ? query.get('lang') : read('lang') || 'en'
+  var lang = query.get('lang') === 'ar' || query.get('lang') === 'en' ? query.get('lang') : read('lang') || root.dataset.defaultLang || 'en'
   var theme = read('theme') || 'dark'
   root.dataset.lang = lang
   root.lang = lang === 'ar' ? 'ar-SA' : 'en'
