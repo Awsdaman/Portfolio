@@ -1,0 +1,13 @@
+node_modules
+dist
+.impeccable/live
+.impeccable/build
+.vercel
+*.local
+
+# Private working notes and drafts, not part of the site
+PORTFOLIO-BRIEF.md
+PRODUCT.md
+directions/
+.claude/
+.impeccable/
